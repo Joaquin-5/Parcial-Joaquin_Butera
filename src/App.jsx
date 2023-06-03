@@ -1,11 +1,14 @@
-import './App.css'
+import "./App.css";
+import { Formulario } from "./components/Formulario";
 
 function App() {
+  
+
   return (
     <>
-      <h1>Parcial Front - End III</h1>
+      <Formulario />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

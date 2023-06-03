@@ -33,10 +33,40 @@
   }
 }
 
-.card {
-  padding: 2em;
-}
-
 .read-the-docs {
   color: #888;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+  width: 300px;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+input {
+  padding: 10px;
+  border-radius: 7px;
+  border: 1px solid #ffffff;
+}
+
+label {
+  text-align: start;
+}
+
+.label-input {
+  display: flex;
+  flex-direction: column;
+}
+
+.card {
+  margin-top: 5rem;
+  border: 1px solid #ffffff;
+  border-radius: 7px;
+}
+
+.card p {
+  font-size: 1.2rem;
 }
