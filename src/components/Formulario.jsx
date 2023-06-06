@@ -7,6 +7,7 @@ export const Formulario = () => {
   const [lastName, setLastName] = useState("");
   const [error, setError] = useState("");
   const [sendSuccessfully, setSendSuccessfully] = useState(false);
+  const [data, setData] = useState({});
 
   function onChangeName(e) {
     setName(e.target.value);
@@ -23,12 +24,18 @@ export const Formulario = () => {
       setError("Por favor chequea que la información sea correcta");
       return;
     }
+
     if (lastName.trim().length < 6 || lastName.trim() === "") {
       setError("Por favor chequea que la información sea correcta");
       return;
     } else {
+      let object = {
+        name: name,
+        lastName: lastName,
+      };
+      setData(object);
       setSendSuccessfully(true);
-      setError(""); 
+      setError("");
     }
   }
 
@@ -38,7 +45,13 @@ export const Formulario = () => {
       <form onSubmit={handleSubmit}>
         <div className="label-input">
           <label htmlFor="name">Nombre</label>
-          <input type="text" name="name" id="name" value={name} onChange={onChangeName}/>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            value={name}
+            onChange={onChangeName}
+          />
         </div>
         <div className="label-input">
           <label htmlFor="lastName">Apellido</label>
@@ -53,7 +66,7 @@ export const Formulario = () => {
         <button type="submit">Enviar</button>
       </form>
       {sendSuccessfully && !error ? (
-        <Card name={name} lastName={lastName} />
+        <Card data={data} />
       ) : (
         <p className="error">{error}</p>
       )}

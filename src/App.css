@@ -70,3 +70,7 @@ label {
 .card p {
   font-size: 1.2rem;
 }
+
+.error {
+  margin-top: 2rem;
+}

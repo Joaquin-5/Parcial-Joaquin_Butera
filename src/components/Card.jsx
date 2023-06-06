@@ -3,8 +3,8 @@ const Card = (props) => {
     <>
       <div className="card">
         <h3>Datos enviados</h3>
-        <p>Nombre: {props.name}</p>
-        <p>Apellido: {props.lastName}</p>
+        <p>Nombre: {props.data.name}</p>
+        <p>Apellido: {props.data.lastName}</p>
       </div>
     </>
   );
